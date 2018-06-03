@@ -12,7 +12,9 @@ html,body { min-height: 100%; height: 100%; }
 .db {display: block;}
 .di {display: inline;}
 .dib {display: inline-block;}
+.dn{display: none;}
 .tc {text-align: center;}
+.tr {text-align: right;}
 .fl {float:left;}
 .fr {float:right;}
 .cl:after,.clli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
@@ -21,6 +23,8 @@ html,body { min-height: 100%; height: 100%; }
 .vm {vertical-align: middle;}
 .wh(@wh:10px){width: @wh; height:@wh;}
 .pb10 {padding-bottom: 10px;}
+.pl20 {padding-left: 20px;}
+.mt15 {margin-top: 15px;}
 .primary-bg(){
   background: #283f7e; /* Old browsers */
   background: -moz-linear-gradient(top, #283f7e 35%, #1f1447 100%, #1e5799 100%); /* FF3.6-15 */
@@ -74,9 +78,13 @@ html,body { min-height: 100%; height: 100%; }
   .weather {.pa; left:50%; top:50%; margin-top: -15px; transform: translateX(-50%); border: 1px solid #5373a5; padding:0px 20px; .txt-color;.lh(30px); background: #223e71;}
 }
 .content {overflow: auto;}
-.box {background: #283d7c; border: 1px solid #5373a5; box-shadow: 0 3px 10px rgba(0,0,0,0.2);.txt-color;.pr;
-  &:before {.wh(14px);.pa; left:-1px; top:-1px; content: ''; border-left:1px solid #8791e0; border-top:1px solid #8791e0;}
-  &:after {.wh(14px);.pa; right:-1px; bottom:-1px; content: ''; border-right:1px solid #8791e0; border-bottom:1px solid #8791e0;}
+.box {background: #283d7c; border: 1px solid #5373a5; box-shadow: 0 3px 10px rgba(0,0,0,0.2);.txt-color;.pr; 
+  &:before {.wh(14px);.pa; left:-1px; top:-1px; content: ''; border-left:1px solid #8791e0; border-top:1px solid #8791e0;transition: 0.3s all;}
+  &:after {.wh(14px);.pa; right:-1px; bottom:-1px; content: ''; border-right:1px solid #8791e0; border-bottom:1px solid #8791e0;transition: 0.3s all;}
+  &:hover{ 
+    &:before {.wh(0)}
+    &:after {.wh(0)}
+  }
   &.b1 { padding: 15px; height: 196px;
     h3 {margin:0; padding:0; font-size: 15px;}
     ul {margin:0; padding:0;}
@@ -128,6 +136,56 @@ html,body { min-height: 100%; height: 100%; }
     h4 {font-size: 18px; line-height: 1.8}
   }
   &.b8{ padding:10px 20px 20px 20px; }
+  &.edit{padding:0 20px; height: 692px;.pr;
+    .box {.pa; left: 50%; top:50%; margin-left: -200px; margin-top: -175px; width: 400px; border-color: #5373a5; background: #2a477c; box-shadow: none; padding:20px;
+      &:before {.dn;}
+      &:after {.dn;}
+    }
+    .form-control {background: transparent;border-color:#5c75a4; .txt-color; border-radius: 0;}
+    .btn-primary {background: #68b8e7; border-radius: 0}
+  }
+  @minHeight:1040px;
+  &.news-list { padding: 0 30px; min-height: @minHeight;
+    .thumbnail {.pr;padding:0;border-radius: 0}
+    .mask-txt {background:rgba(0,0,0,0.5); .txt-color; padding:10px 15px 10px 15px;.pa; left: 0; right:0; bottom:0;
+      i {.pa; right:20px; bottom:10px;font-style: normal;}
+    }
+  }
+  
+  &.news-side{padding: 0 30px 30px 30px; min-height: @minHeight;
+    .video { background: #000;
+      video { width: 100%; height:400px}
+    }
+    .more {.tr; margin-top: 15px;
+      a {.txt-color;}
+    }
+  }
+
+  &.article-l{ padding:30px;
+    .title {.tc; font-size: 18px; margin-bottom: 30px;}
+    p {line-height: 1.8; text-indent: 2em;}
+    img {max-width: 100%; height:auto;.bc;.db; margin-bottom: 10px;}
+  }
+  &.article-r{padding:30px;
+    .page-side{
+      a {.txt-color;}
+    }
+    .ad {
+      img {width: 100%; height:auto; margin-bottom: 20px;}
+    }
+  }
+
+}
+.pages {.tc;
+  span {.dib;.fl;}
+  .active{
+    a,span { background: #68b8e7; border-color:#68b8e7 }
+  }
+  li{
+    &:nth-of-type(1) a{border-radius: 0}
+    &:nth-last-of-type(1) span{border-radius: 0}
+    span,a{ background: transparent; .txt-color;}
+  }
 }
 .title{
   &.ex1 {font-size: 15px; .txt-color;}
@@ -150,4 +208,10 @@ html,body { min-height: 100%; height: 100%; }
   h4 {.txt-success;font-size: 32px;.pr;
     b{font-weight: normal; font-size: 16px; .txt-color;}
   }
+}
+#modal-01 {
+  .modal-content {border-radius: 0;border:1px solid #5373a5; background: #223e71;.tc;}
+  .modal-body {font-size: 24px; .txt-color; padding-top: 30px;}
+  .modal-footer {border: none;.tc;}
+  .btn-primary {border-radius: 0; background: #68b8e7;}
 }

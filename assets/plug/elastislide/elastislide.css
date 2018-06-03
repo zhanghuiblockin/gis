@@ -1,0 +1,50 @@
+/* Elastislide Style */
+.es-carousel-wrapper * {box-sizing: content-box;}
+.es-carousel-wrapper{
+	padding:0 0px;
+	position:relative;
+}
+.es-carousel{
+	overflow:hidden;
+}
+.es-carousel ul{
+	display:block;
+	margin:0; padding:0;
+}
+.es-carousel ul li{
+	height:100%;
+	float:left;
+	display:block;
+	padding: 0; list-style: none; cursor: pointer;
+}
+
+.es-carousel ul li a{
+	display:block;
+	border-style:solid;
+	border-color:#222;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	max-height:100%;
+	max-width:100%;
+}
+.es-nav span{
+	position:absolute;
+	top:0%;
+	left:0;
+	background: rgba(0,0,0,0.5) url(../../img/news/left.png) no-repeat center center;
+	width:36px;
+	height:100%;
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.8;
+}
+.es-nav span.es-nav-next{
+	right:0;
+	left:auto;
+	background: rgba(0,0,0,0.5) url(../../img/news/right.png) no-repeat center center;
+}
+.es-nav span:hover{
+	opacity:1.0;
+}
