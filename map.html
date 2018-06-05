@@ -35,6 +35,7 @@
         <a href="monitor.html" class="list-group-item">物联监控</a>
         <a href="extension.html" class="list-group-item">农技推广</a>
         <a href="alleviation.html" class="list-group-item">产业扶贫</a>
+        <a href="care.html" class="list-group-item">总书记关怀</a>
       </div>
     </div>
     <div class="main">
@@ -68,6 +69,7 @@
   <script>
     var map = new AMap.Map('gaode-map', {
       zoom: 11,//级别
+      pitch:75,
       center: [116.397428, 39.90923],//中心点坐标
       viewMode: '3D'//使用3D视图
     });
@@ -237,6 +239,7 @@
     // // 传入覆盖物数组，仅包括polyline和marker1的情况
     // map.setFitView([polyline, marker1, marker2]);
     // ===========================================================
+    map.setMapStyle('amap://styles/blue');
     // ===========================================================
     // ===========================================================
     // ===========================================================
