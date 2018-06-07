@@ -6,9 +6,9 @@ html,body { min-height: 100%; height: 100%; }
 
 
 .clear-radius() {border-radius: 0}
-.pr() {position: relative;}
-.pa() {position: absolute;}
-.bc() {margin-left: auto; margin-right: auto;}
+.pr {position: relative;}
+.pa {position: absolute;}
+.bc {margin-left: auto; margin-right: auto;}
 .db {display: block;}
 .di {display: inline;}
 .dib {display: inline-block;}
@@ -151,7 +151,6 @@ html,body { min-height: 100%; height: 100%; }
       i {.pa; right:20px; bottom:10px;font-style: normal;}
     }
   }
-  
   &.news-side{padding: 0 30px 30px 30px; min-height: @minHeight;
     .video { background: #000;
       video { width: 100%; height:400px}
@@ -172,6 +171,43 @@ html,body { min-height: 100%; height: 100%; }
     }
     .ad {
       img {width: 100%; height:auto; margin-bottom: 20px;}
+    }
+  }
+  &.care { padding:20px;
+    .banner {.pr; .txt-color; height: 184px;
+      img{max-width: 100%; height: auto;}
+      p {.pa; right:100px; top:40px; bottom:20px; width: 500px; text-align: justify; line-height: 1.8; font-size: 16px;}
+    }
+    .hr {border-top-color: #436395}
+    .history{.pr;
+      i {.pa; left:0; right:0; top:50%; border-top: 2px solid #6780ad;}
+      ul { padding: 0;
+        li {list-style: none; .fl;.pr; width: 25%; padding:0 4%; 
+          b {.pa; left: 50%; top:50%; .wh(18px); background: #4c6396; border-radius: 50%; margin-left: -9px;margin-top: -9px; transition: 0.3s all;
+            &:after {.pa;.wh(8px); background: #afb9eb; border-radius: 50%; left: 50%; top:50%; margin-left: -4px;margin-top: -4px; content: ''; transition: 0.3s;}
+          }
+          p {margin: 0; line-height: 2; .txt-color;}
+          .thumbnail {border: none; border-radius: 0; padding: 0; margin:0;
+            &.img { margin-bottom: 40px;}
+            &.txt { background:transparent;.pr; margin-bottom: 0; margin-top: 40px;
+              p {.pa; left: 0; top:0px; right:0; bottom:0;}
+            }
+          }
+          &:nth-of-type(2n){
+            .thumbnail{
+              &.img {margin-top: 40px; margin-bottom: 0;}
+              &.txt { margin-bottom: 40px; margin-top: 0;
+                p {top:auto; bottom:0px;}
+              }
+            }
+          }
+          &:hover {
+            b {box-shadow: 0 0 10px 10px rgba(255,255,255,0.1);
+              &:after {background: #fff;}
+            }
+          }
+        }
+      }
     }
   }
 
