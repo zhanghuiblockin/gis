@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=1280, initial-scale=1">
   <title>首页-阜平县农业一张图GIS平台</title>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet/less" type="text/css" href="assets/css/style.less" />
@@ -44,7 +45,7 @@
         <div class="content">
           <div class="container-fluid" style="padding-top:15px; padding-bottom: 15px;">
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
                 <div class="box b1">
                   <h3>阜平县基础数据</h3>
                   <ul>
@@ -76,15 +77,11 @@
                   </ul>
                 </div>
                 <h3 class="title ex1">主要农作物种植面积</h3>
-                <div class="box b2">
-                  echart圆图
-                </div>
+                <div class="box b2" id="chart-a"></div>
                 <h3 class="title ex1">畜禽养殖产量统计表</h3>
-                <div class="box b3">
-                  echart圆图
-                </div>
+                <div class="box b3" id="chart-b"></div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                 <p class="txt-color tc">集体经济总收入:
                   <span class="txt-warning">235.8万</span>农作物总播种面积：
                   <span class="txt-success">35.8万亩</span>农村居民人均收入：
@@ -95,8 +92,8 @@
                 </div>
                 <h3 class="title ex1">阜平县贫困人数统计</h3>
                 <div class="box b4">
-                  <div class="col-md-9">88888</div>
-                  <div class="col-md-3">
+                  <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9" id="chart-c"></div>
+                  <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
                     <p>
                       <img src="assets/img/main/icon-peoples.png" alt="">
                       <span>3658
@@ -107,107 +104,109 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3  col-sm-3 col-xs-3 col-lg-3">
                 <div class="box b5 tc">
                   <div class="news"></div>
                   <div class="video">
                     <video controls src="https://image.wanda.cn/uploadfile/2016/0504/20160504044136946.mp4"></video>
                   </div>
-                  <p class="more"><a href="news.html">更多阜平动态&gt;</a></p>
+                  <p class="more">
+                    <a href="news.html">更多阜平动态&gt;</a>
+                  </p>
                 </div>
                 <h3 class="title ex1">今日批发市场产品均价</h3>
                 <div class="box b6">
                   <ul>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
-                      <li>
-                        <img src="assets/img/main/icon-001.png" alt="">
-                        <span>绿豆</span>
-                        <span>3.5元 / 斤</span>
-                      </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
+                    <li>
+                      <img src="assets/img/main/icon-001.png" alt="">
+                      <span>绿豆</span>
+                      <span>3.5元 / 斤</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -220,6 +219,243 @@
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/common.js"></script>
+  <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+  <script type="text/javascript">
+    // 路径配置
+    require.config({
+      paths: {
+        echarts: 'http://echarts.baidu.com/build/dist'
+      }
+    });
+    require(
+      [
+        'echarts',
+        'echarts/chart/bar',
+        'echarts/chart/pie',
+      ],
+      function (ec) {
+        // 基于准备好的dom，初始化echarts图表
+        var chartA = ec.init(document.getElementById('chart-a'));
+        var chartB = ec.init(document.getElementById('chart-b'));
+        var chartC = ec.init(document.getElementById('chart-c'));
+
+        var optionA = {
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c}万亩 ({d}%)"
+          },
+          calculable: false,
+          series: [
+            {
+              name: '种植面积',
+              type: 'pie',
+              radius: [40, 80],
+              x: '60%',
+              width: '35%',
+              funnelAlign: 'left',
+              max: 1048,
+              data: [
+                { value: 335, name: '稻谷' },
+                { value: 310, name: '小麦' },
+                { value: 234, name: '玉米' },
+                { value: 135, name: '大豆' },
+                { value: 1048, name: '其他' },
+                { value: 251, name: '蔬菜' },
+                { value: 147, name: '黄岑' },
+                { value: 102, name: '大枣' }
+              ]
+            }
+          ]
+        };
+        var optionB = {
+          grid: { x: 50, y: 20, y2: 55, x2: 10, borderWidth: 0, },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          legend: {
+            y: 'bottom',
+            data: ['肉类', '水产品', '蛋类', '蜂产品', '奶产品']
+          },
+          calculable: true,
+          xAxis: [
+            {
+              axisLine: {
+                show: true,
+                lineStyle: {
+                  color: '#436395',
+                  type: 'solid',
+                  width: 1,
+                  shadowColor: 'rgba(0,0,0,0)',
+                  shadowBlur: 0,
+                  shadowOffsetX: 0,
+                  shadowOffsetY: 0,
+                },
+              },
+              axisTick: { show: false },
+              splitLine: { show: false },
+              splitArea: { show: false },
+              axisLabel: { textStyle: { color: '#c7dbff' } },
+              type: 'category',
+              data: ['13年', '14年', '15年', '16年', '17年']
+            }
+          ],
+          yAxis: [
+            {
+              axisLine: {
+                show: true,
+                lineStyle: {
+                  color: '#436395',
+                  type: 'solid',
+                  width: 1,
+                  shadowColor: 'rgba(0,0,0,0)',
+                  shadowBlur: 0,
+                  shadowOffsetX: 0,
+                  shadowOffsetY: 0,
+                }
+              },
+              splitLine: { show: false },
+              splitArea: { show: false },
+              axisLabel: { textStyle: { color: '#c7dbff' } },
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: '肉类',
+              type: 'bar',
+              stack: '总量',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [320, 302, 301, 334, 390]
+            },
+            {
+              name: '水产品',
+              type: 'bar',
+              stack: '总量',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [120, 132, 101, 134, 90]
+            },
+            {
+              name: '蛋类',
+              type: 'bar',
+              stack: '总量',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [220, 182, 191, 234, 290]
+            },
+            {
+              name: '蜂产品',
+              type: 'bar',
+              stack: '总量',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [150, 212, 201, 154, 190]
+            },
+            {
+              name: '奶产品',
+              type: 'bar',
+              stack: '总量',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [820, 832, 901, 934, 1290]
+            }
+          ]
+        };
+        var optionC = {
+          grid: { x: 50, y: 20, y2: 55, x2: 10, borderWidth: 0, },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          legend: {
+            y: 'bottom',
+            data: ['一般贫困人数', '低保贫困人数', '无保贫困人数']
+          },
+          calculable: true,
+          xAxis: [
+            {
+              axisLine: {
+                show: true,
+                lineStyle: {
+                  color: '#436395',
+                  type: 'solid',
+                  width: 1,
+                  shadowColor: 'rgba(0,0,0,0)',
+                  shadowBlur: 0,
+                  shadowOffsetX: 0,
+                  shadowOffsetY: 0,
+                },
+              },
+              axisTick: { show: false },
+              splitLine: { show: false },
+              splitArea: { show: false },
+              axisLabel: { textStyle: { color: '#c7dbff' } },
+              type: 'category',
+              data: ['14年', '15年', '16年', '17年']
+            }
+          ],
+          yAxis: [
+            {
+              axisLine: {
+                show: true,
+                lineStyle: {
+                  color: '#436395',
+                  type: 'solid',
+                  width: 1,
+                  shadowColor: 'rgba(0,0,0,0)',
+                  shadowBlur: 0,
+                  shadowOffsetX: 0,
+                  shadowOffsetY: 0,
+                }
+              },
+              splitLine: { show: false },
+              splitArea: { show: false },
+              axisLabel: { textStyle: { color: '#c7dbff' } },
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: '一般贫困人数',
+              type: 'bar',
+              stack: '',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [320, 302, 301, 334]
+            },
+            {
+              name: '低保贫困人数',
+              type: 'bar',
+              stack: '',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [120, 132, 101, 134]
+            },
+            {
+              name: '无保贫困人数',
+              type: 'bar',
+              stack: '',
+              itemStyle: { normal: { label: { show: true, position: 'insideRight' } } },
+              data: [220, 182, 191, 234]
+            }
+          ]
+        };
+
+        // 为echarts对象加载数据 
+        chartA.setOption(optionA);
+        chartB.setOption(optionB);
+        chartC.setOption(optionC);
+
+        setTimeout(function () {
+          window.onresize = function () {
+            chartA.resize();
+            chartB.resize();
+            chartC.resize();
+          }
+        }, 200)
+
+      }
+    );
+  </script>
 </body>
 
 </html>
