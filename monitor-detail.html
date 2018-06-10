@@ -44,14 +44,273 @@
         <div class="content">
           <div class="container-fluid" style="padding-top:15px; padding-bottom: 15px;">
             <div class="row">
-              <div class="col-md-4">
-                <div class="box">123</div>
-                <div class="box" style="margin-top: 20px;">123</div>
-              </div>
-              <div class="col-md-8">
-                  <div class="box">123</div>
-                  <div class="box" style="margin-top: 20px;">123</div>
+              <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+                <div class="box jk-1">
+                  <div class="tab-tit">
+                    <ul class="cl">
+                      <li class="active">
+                        <a href="#t1" role="tab" data-toggle="tab">简介</a>
+                      </li>
+                      <li>
+                        <a href="#t2" role="tab" data-toggle="tab">图库</a>
+                      </li>
+                      <li>
+                        <a href="#t3" role="tab" data-toggle="tab">主要作物</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="t1">
+                      <p>简介：成立于2015年，经营的主要范围是小麦、大豆等农作物。该示范园是第一批被定位示范园的基地具有非常重要的地位，业示范园，也可称农业示范区。在我国农业示范园多为科技示范园，是以 科技为支撑的农业发展的新型模式，是农业技术组装集成的载体，是市场与农户连接的纽带，是现代农业科技的辐射源，是人才培养和技术培训的基地，对周边地区农业产业升级和农村经济发展具有示范作用。
+                        <br> 地址：阜平县平阳镇平阳村
+                        <br> 联系方式：13556237789
+                      </p>
+                    </div>
+                    <div class="tab-pane" id="t2">
+                      <p>简介：成立于2015年，经营的主要范围是小麦、大豆等农作物。该示范园是第一批被定位示范园的基地具有非常重要的地位，业示范园，也可称农业示范区。在我国农业示范园多为科技示范园，是以 科技为支撑的农业发展的新型模式，是农业技术组装集成的载体，是市场与农户连接的纽带，是现代农业科技的辐射源，是人才培养和技术培训的基地，对周边地区农业产业升级和农村经济发展具有示范作用。
+                        <br> 地址：阜平县平阳镇平阳村
+                        <br> 联系方式：13556237789
+                      </p>
+                      <p>简介：成立于2015年，经营的主要范围是小麦、大豆等农作物。该示范园是第一批被定位示范园的基地具有非常重要的地位，业示范园，也可称农业示范区。在我国农业示范园多为科技示范园，是以 科技为支撑的农业发展的新型模式，是农业技术组装集成的载体，是市场与农户连接的纽带，是现代农业科技的辐射源，是人才培养和技术培训的基地，对周边地区农业产业升级和农村经济发展具有示范作用。
+                        <br> 地址：阜平县平阳镇平阳村
+                        <br> 联系方式：13556237789
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <div class="box jk-2" style="margin-top: 30px;">
+                  <ul class="cl">
+                    <li>
+                      <h4>室内温度</h4>
+                      <p>22.3
+                        <i>℃</i>
+                      </p>
+                    </li>
+                    <li>
+                      <h4>室内湿度</h4>
+                      <p>44.2
+                        <i>%</i>
+                      </p>
+                    </li>
+                    <li>
+                      <h4>土壤湿度</h4>
+                      <p>35.7
+                        <i>%</i>
+                      </p>
+                    </li>
+                    <li>
+                      <h4>土壤水分</h4>
+                      <p>22.3
+                        <i>℃</i>
+                      </p>
+                    </li>
+                    <li>
+                      <h4>光照值</h4>
+                      <p>44.2
+                        <i>%</i>
+                      </p>
+                    </li>
+                    <li>
+                      <h4>二氧化碳浓度</h4>
+                      <p>35.7
+                        <i>%</i>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+                <div class="box jk-3">
+                  <div class="bar">
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                      <select name="" id="" class="form-control">
+                        <option value="1">环境因子</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                      <select name="" id="" class="form-control">
+                        <option value="1">植物生长期</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                      <select name="" id="" class="form-control">
+                        <option value="1">时间范围</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                      <select id="chartType" class="form-control" onchange="changeChartType(this.value)">
+                        <option value="line">折线图</option>
+                        <option value="bar">柱状图</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div id="chart-d"></div>
+                </div>
+                <div class="box jk-4" style="margin-top: 30px;">
+                  <ul>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon06.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>异常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon06.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>异常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon06.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>异常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon05.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>正常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon06.png" alt="">
+                      </b>
+                      <span>[A1大棚]</span>
+                      <span>异常</span>
+                      <a href="#">
+                        <s>详情</s>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -60,7 +319,121 @@
   </div>
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/echarts/2.2.7/echarts-all.js"></script>
   <script src="assets/js/common.js"></script>
+  <script>
+    var myChart, option;
+    window.onload = function () {
+      myChart = echarts.init(document.getElementById('chart-d'));
+      option = {
+        color:["rgba(41,269,253,0.5)","rgba(255,87,87,0.5)","rgba(259,189,61,0.5)"],
+        grid: { x: 50, y: 80, y2: 85, x2: 0, borderWidth: 0, },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        legend: {
+          itemGap:30,
+          y: 340,
+          textStyle:{color:'#fff'},
+          data: ['植物生长周期', '折线图', '水分']
+        },
+        calculable: true,
+        xAxis: [
+          {
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: '#436395',
+                type: 'solid',
+                width: 1,
+                shadowColor: 'rgba(0,0,0,0)',
+                shadowBlur: 0,
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+              },
+            },
+            axisTick: { show: false },
+            splitLine: { show: false },
+            splitArea: { show: false },
+            axisLabel: { textStyle: { color: '#c7dbff' } },
+            type: 'category',
+            data: ['10年', '11年', '12年', '13年', '14年', '15年', '16年', '17年']
+          }
+        ],
+        yAxis: [
+          {
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: '#436395',
+                type: 'solid',
+                width: 1,
+                shadowColor: 'rgba(0,0,0,0)',
+                shadowBlur: 0,
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+              }
+            },
+            splitLine: { 
+              show: true,
+              lineStyle: {
+                  color: '#436395',
+                  width: 1,
+                  type: 'solid'
+              }
+            },
+            axisLabel: { textStyle: { color: '#c7dbff' } },
+            type: 'value'
+          }
+        ],
+        series: [
+          {
+            barMaxWidth: 50,
+            barCategoryGap: '30%',
+            name: '植物生长周期',
+            type: 'line',
+            // stack: '总量',
+            itemStyle: { normal: { areaStyle: { type: 'default' } } },
+            data: [320, 302, 301, 334, 390, 301, 334, 390]
+          },
+          {
+            name: '折线图',
+            type: 'line',
+            // stack: '总量',
+            itemStyle: { normal: { areaStyle: { type: 'default' } } },
+            data: [120, 132, 101, 134, 90, 132, 101, 134]
+          },
+          {
+            name: '水分',
+            type: 'line',
+            // stack: '总量',
+            itemStyle: { normal: { areaStyle: { type: 'default' } } },
+            data: [220, 182, 191, 500, 290, 191, 234, 350]
+          },
+        ]
+      };
+      myChart.setOption(option);
+      setTimeout(function () {
+        window.onresize = function () {
+          myChart.resize();
+        }
+      }, 200)
+    };
+    function changeChartType(type) {
+      var $series = myChart.getOption().series;
+      var $len = $series.length;
+      for (var i = 0; i < $len; i++) {
+        $series[i].type = type
+      }
+      myChart.setOption({
+        series: $series
+      })
+    }
+
+  </script>
 </body>
 
 </html>

@@ -14,9 +14,11 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <!-- 高德地图 -->
-  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=6f6c7b36575ec0255247ca607f8bf797"></script>
+  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+  <script src="http://webapi.amap.com/maps?v=1.4.6&key=6f6c7b36575ec0255247ca607f8bf797&plugin=Map3D,AMap.DistrictSearch"></script>
+  <!-- <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=6f6c7b36575ec0255247ca607f8bf797&plugin=Map3D,AMap.DistrictSearch"></script> -->
   <style>
-    #gaode-map {
+    #container {
       width: 100%;
       height: 100%;
     }
@@ -54,7 +56,176 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="box map">
-                  <div id="gaode-map"></div>
+                  <div class="bar box ex1">
+                    <h3>筛选</h3>
+                    <div class="select" id="area">
+                      <b>选择地区</b>
+                      <ul></ul>
+                      <ul></ul>
+                    </div>
+                    <div class="select" id="product">
+                      <b>产品分类</b>
+                      <ul></ul>
+                      <ul></ul>
+                    </div>
+                    <div class="select" id="organization">
+                      <b>组织类型</b>
+                      <ul></ul>
+                      <ul></ul>
+                    </div>
+                    <div class="search">
+                      <div class="input-group">
+                        <input type="text" placeholder="请输入地名/农场/合作社/作物等" class="form-control" id="inputSearch">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default">
+                            <i class="glyphicon glyphicon-search"></i> 快速搜索</button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list box ex1" style="display: none">
+                    <ul class="list-content">
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                      <li class="cl">
+                        <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+                        <div class="txt">
+                          <h4>兴农养殖场
+                            <span>【禽类】</span>
+                          </h4>
+                          <p>负责人：赵国秋
+                            <br>地址：阜平县平阳镇平阳村
+                            <br>联系方式：13582267277</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="pages">
+                      <ul class="pagination">
+                        <li>
+                          <a href="#">&laquo;</a>
+                        </li>
+                        <li class="active">
+                          <a href="#">1</a>
+                        </li>
+                        <li>
+                          <a href="#">2</a>
+                        </li>
+                        <li>
+                          <a href="#">3</a>
+                        </li>
+                        <li>
+                          <a href="#">4</a>
+                        </li>
+                        <li>
+                          <a href="#">5</a>
+                        </li>
+                        <li>
+                          <a href="#">&raquo;</a>
+                        </li>
+                        <li>
+                          <span>共5页</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="container"></div>
                 </div>
               </div>
             </div>
@@ -65,189 +236,184 @@
   </div>
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js"></script>
   <script src="assets/js/common.js"></script>
-  <script>
-    var map = new AMap.Map('gaode-map', {
-      zoom: 11,//级别
-      pitch:75,
-      center: [116.397428, 39.90923],//中心点坐标
-      viewMode: '3D'//使用3D视图
+  <script type="text/javascript">
+    $.ajax({
+      type: "get",
+      url: "../assets/mock/info.json",
+      dataType: "json",
+      success: function (res) {
+
+        // 地图初始化
+        var map = new AMap.Map('container', {
+          resizeEnable: true,
+          viewMode: '3D',
+          pitch: 50,
+          zoom: 10,
+          center: [114.195083, 38.849236]
+        });
+
+        // 获取大类、小类企业信息
+        // id:大类ID(必填),subId:子类id(选填)
+        // 具体请看info.json相关模拟字段
+        // 调用方法 getCompany(1,101)/getCompany(1);
+        function getCompany(id, subId) {
+          // 详情列表
+          if (id && subId) {
+            for (var i = 0; i < res.length; i++) {
+              if (res[i].id == id && res[i].subId == subId) {
+                return res[i].child
+              }
+            }
+          }
+          // 大类列表
+          if (id && !subId) {
+            var arr = [];
+            for (var i = 0; i < res.length; i++) {
+              if (res[i].id == id && res[i].child.length > 0) {
+                for (var j = 0; j < res[i].child.length; j++) {
+                  arr.push(res[i].child[j])
+                }
+              }
+            }
+            return arr;
+          }
+        }
+        var companys = getCompany(1);
+        // var companys = getCompany(1,101);
+
+        var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+        for (var i = 0, marker; i < companys.length; i++) {
+          var marker = new AMap.Marker({
+            position: companys[i].lnglats,
+            map: map
+          });
+          var infoStr = '<div class="box ex1"><div class="info-content cl"><img class="img" src="' + companys[i].img + '" alt=""><div class="txt"><h4>' + companys[i].name + '<span>【XXX】</span></h4><p>联系人：' + companys[i].contact + '<br>地址：' + companys[i].add + '<br>联系方式：' + companys[i].tel + '</p></div></div></div>'
+          marker.content = infoStr;
+          marker.on('click', markerClick);
+          // marker.emit('click', { target: marker });
+        }
+        function markerClick(e) {
+          infoWindow.setContent(e.target.content);
+          infoWindow.open(map, e.target.getPosition());
+        }
+        map.setFitView();
+      }
     });
-    // ===========================================================
-    //图层 (实时路况图层) http://lbs.amap.com/api/javascript-api/guide/layers/official-layers
-    // var trafficLayer = new AMap.TileLayer.Traffic({
-    //   zIndex: 10
-    // });
-    // map.add(trafficLayer);//添加图层到地图
-    // ===========================================================
-    // 点标记 http://lbs.amap.com/api/javascript-api/guide/overlays/marker
-    // var marker = new AMap.Marker({
-    //     position:[116.39, 39.9]//位置
-    // })
-    // map.add(marker);//添加到地图
-    // map.remove(marker)
-    // ===========================================================
-    //事件系统：http://lbs.amap.com/api/javascript-api/guide/events/map_overlay
-    //信息窗体：http://lbs.amap.com/api/javascript-api/guide/overlays/infowindow
-    // var infoWindow = new AMap.InfoWindow({ //创建信息窗体
-    //   isCustom: true,  //使用自定义窗体
-    //   content: '<div style="background:#f00">信息窗体</div>', //信息窗体的内容可以是任意html片段
-    //   offset: new AMap.Pixel(16, -45)
-    // });
-    // var onMarkerClick = function (e) {
-    //   infoWindow.open(map, e.target.getPosition());//打开信息窗体
-    //   //e.target就是被点击的Marker
-    // }
-    // var marker = new AMap.Marker({
-    //   position: [116.481181, 39.989792]
-    // })
-    // map.add(marker);
-    // marker.on('click', onMarkerClick);//绑定click事件
-    // ===========================================================
-    // AMap.plugin('AMap.ToolBar',function(){//异步加载插件
-    //     var toolbar = new AMap.ToolBar();
-    //     map.addControl(toolbar);
-    // });
-    // ===========================================================
-    // AMap.plugin(['AMap.ToolBar', 'AMap.Driving'], function () {//异步同时加载多个插件
-    //   var toolbar = new AMap.ToolBar();
-    //   map.addControl(toolbar);
-    //   var driving = new AMap.Driving();//驾车路线规划
-    //   driving.search('/*参数*/')
-    // });
-    // ===========================================================
-    // 经纬度格式
-    // var path = [[116, 39], [116, 40], [117, 39]]; //简写
-    // var polyline = new AMap.Polyline({
-    //   path: path,
-    // })
-    // map.add(polyline);
-    // ===========================================================
-    // 经纬度计算
-    // var lnglat1 = new AMap.LngLat(116, 39);
-    // var lnglat2 = new AMap.LngLat(117, 39);
-    // var distance = lnglat1.distance(lnglat2);//计算lnglat1到lnglat2之间的实际距离(m)
-    // var lnglat3 = lnglat1.offset(100, 50)//lnglat1向东100m，向北50m的位置的经纬度
-    // ===========================================================
-    // 像素点 AMap.Pixel
-    // var offset = new AMap.Pixel(-16, -30);
-    // var marker = new AMap.Marker({
-    //   offset: offset,
-    //   icon: 'xxx.png',
-    // });
-    // map.add(marker);
-    // ===========================================================
-    // 像素尺寸 AMap.Size http://lbs.amap.com/api/javascript-api/reference/core#Size
-    // var mapSize = map.getSize();//获取地图大小，返回的是地图容器的像素大小
-    // var width = mapSize.width;
-    // var height = mapSize.height;
-    // var marker = new AMap.Marker({
-    //   position: [116.405467, 39.907761],
-    //   icon: new AMap.Icon({
-    //     size: new AMap.Size(40, 50),  //图标的大小
-    //     image: "http://webapi.amap.com/theme/v1.3/images/newpc/way_btn2.png",
-    //     imageOffset: new AMap.Pixel(0, -60)
-    //   })
-    // });
-    // map.add(marker)
-    // ===========================================================
-    // // 经纬度矩形边界 AMap.Bounds http://lbs.amap.com/api/javascript-api/reference/core#Bounds
-    // var southWest = new AMap.LngLat(110, 20);
-    // var northEast = new AMap.LngLat(120, 30);
-    // var bounds = new AMap.Bounds(southWest, northEast);
-    // map.setBounds(bounds);
-    // ===========================================================
-    // // 经纬度路径边界 AMap.ArrayBounds
-    // var arrayBounds = map.getBounds();
-    // var path = arrayBounds.bounds//经纬度的路径
-    // var isPointInBounds = arrayBounds.contains(new AMap.LngLat(116, 39))//判断点是否在边界内
-    // console.log(isPointInBounds);
-    // ===========================================================
-    // 地图生命周期
-    // var map = new AMap.Map('gaode-map', {
-    //   zoom: 10,  //设置地图显示的缩放级别
-    //   center: [116.397428, 39.90923],//设置地图中心点坐标
-    //   layers: [new AMap.TileLayer.Satellite()],  //设置图层,可设置成包含一个或多个图层的数组
-    //   mapStyle: 'amap://styles/whitesmoke',  //设置地图的显示样式
-    //   viewMode: '2D',  //设置地图模式
-    //   lang: 'zh_cn',  //设置地图语言类型
-    // });
-    // map.on('complete', function () {
-    //   // 地图图块加载完成后触发
-    //   alert(1)
-    // });
-    // // 销毁地图，并清空地图容器
-    // map.destroy();
-    // ===========================================================
-    // 设置 / 获取地图中心点和级别 
-    // 传入经纬度，设置地图中心点
-    // var position = new AMap.LngLat(116, 39);  // 标准写法
-    // // 简写 var position = [116, 39]; 
-    // map.setCenter(position);
-    // // 获取地图中心点
-    // var currentCenter = map.getCenter();
-    // console.log(currentCenter);
+  </script>
+  <script>
+    $(function () {
+      $.ajax({
+        type: "get",
+        url: "../assets/mock/select.json",
+        dataType: "json",
+        success: function (res) {
+          var area = res.area;
+          var areaLen = res.area.length;
+          var product = res.product;
+          var productLen = res.product.length;
+          var organization = res.organization;
+          var organizationLen = res.organization.length;
 
-    // // 设置地图级别，级别为数字。
-    // // PC上，参数zoom可设范围：[3,18]；
-    // // 移动端：参数zoom可设范围：[3,19]
-    // map.setZoom(13);
-    // // 获取地图级别
-    // var currentZoom = map.getZoom();
-    // ===========================================================
-    // // 设置地图级别，级别为数字。
-    // // PC上，参数zoom可设范围：[3,18]；
-    // // 移动端：参数zoom可设范围：[3,19]
-    // map.setZoom(13);
-    // // 获取地图级别
-    // var currentZoom = map.getZoom();
-    // console.log(currentZoom);
-    // ===========================================================
-    // // 同时传入缩放级别和中心点经纬度
-    // map.setZoomAndCenter(14, [116.205467, 39.907761]);
-    // ===========================================================
-    // *********自动将地图上设置好的标记来调整地图显示缩放级别 创建一条折线覆盖物
-    // var path = [
-    //   new AMap.LngLat("116.368904", "39.913423"),
-    //   new AMap.LngLat("116.382122", "39.901176"),
-    //   new AMap.LngLat("116.387271", "39.912501"),
-    //   new AMap.LngLat("116.398258", "39.904600")
-    // ];
-    // var polyline = new AMap.Polyline({
-    //   path: path,
-    //   borderWeight: 2, // 线条宽度，默认为 1
-    //   strokeColor: 'red', // 线条颜色
-    //   lineJoin: 'round' // 折线拐点连接处样式
-    // });
-    // map.add(polyline);
+          $('#inputSearch').click(function (e) {
+            $('.list.box.ex1').show();
+            return false;
+          });
+          
 
-    // // 创建两个点标记
-    // var marker1 = new AMap.Marker({
-    //   position: new AMap.LngLat(117.39, 39.9),   // 经纬度对象，如 new AMap.LngLat(116.39, 39.9); 也可以是经纬度构成的一维数组[116.39, 39.9]
-    //   title: '北京'
-    // });
-    // var marker2 = new AMap.Marker({
-    //   position: new AMap.LngLat(118.39, 39.9),   // 经纬度对象，如 new AMap.LngLat(116.39, 39.9); 也可以是经纬度构成的一维数组[116.39, 39.9]
-    //   title: '北京'
-    // });
-    // map.add(marker1);
-    // map.add(marker2);
+          var selectTxt = [];
+          $(".select").click(function (e) {
+            $('.select').removeClass('active');
+            $(".select ul").hide();
+            $(this).addClass('active').find('ul').eq(0).fadeIn();
+            return false;
+          });
 
-    // // 自动适配到合适视野范围
-    // // 无参数，默认包括所有覆盖物的情况
-    // map.setFitView();
-    // // 传入覆盖物数组，仅包括polyline和marker1的情况
-    // map.setFitView([polyline, marker1, marker2]);
-    // ===========================================================
-    map.setMapStyle('amap://styles/blue');
-    // ===========================================================
-    // ===========================================================
-    // ===========================================================
-    // ===========================================================
-    // ===========================================================
-    // ===========================================================
-    // ===========================================================
-    // ===========================================================
+          // 生成下拉一级结构
+          var areaUl1Str = '',
+            productUl1Str = '',
+            organizationUl1Str = '';
+          for (var i = 0; i < areaLen; i++) {
+            areaUl1Str += '<li data-id="' + area[i].id + '">' + area[i].name + '</li>'
+          }
+          $('#area ul:eq(0)').html(areaUl1Str);
+          for (var i = 0; i < productLen; i++) {
+            productUl1Str += '<li data-id="' + product[i].id + '">' + product[i].name + '</li>'
+          }
+          $('#product ul:eq(0)').html(productUl1Str);
+          for (var i = 0; i < organizationLen; i++) {
+            organizationUl1Str += '<li data-id="' + organization[i].id + '">' + organization[i].name + '</li>'
+          }
+          $('#organization ul:eq(0)').html(organizationUl1Str);
+
+
+          // 一级点击
+          $(".select").on('click', 'ul:eq(0) li', function (e) {
+            var id = $(this).data('id');
+            var tar = $(this).closest('.select').attr('id'); //String:area,product,organization
+            $(this).addClass('active').siblings().removeClass('active')
+
+            switch (tar) {
+              case 'area':
+                var objSelect = _.find(area, function (o) { return o.id == id })
+                var arrChild = objSelect.child.length;
+                if (arrChild > 0) {
+                  var areaUl2Str = ''
+                  for (var i = 0; i < arrChild; i++) {
+                    areaUl2Str += '<li data-id="' + objSelect.child[i].id + '">' + objSelect.child[i].name + '</li>'
+                  }
+                  $(this).parent().next('ul').html(areaUl2Str);
+                  $(this).parent().next('ul').fadeIn();
+                } else {
+                  $('.select ul').fadeOut();
+                }
+                console.log('area', id, );
+
+                break;
+
+              case 'product':
+                var objSelect = _.find(product, function (o) { return o.id == id })
+                var arrChild = objSelect.child.length;
+                // console.log(objSelect);
+                if (arrChild > 0) {
+                  var productUl2Str = ''
+                  // 生成二级结构
+                  for (var i = 0; i < arrChild; i++) {
+                    productUl2Str += '<li data-id="' + objSelect.child[i].id + '">' + objSelect.child[i].name + '</li>'
+                  }
+                  $(this).parent().next('ul').html(productUl2Str);
+                  $(this).parent().next('ul').fadeIn();
+                } else {
+                  $('.select ul').fadeOut();
+                }
+                break;
+
+              case 'organization':
+                $('.select ul').fadeOut();
+                break;
+            }
+            selectTxt[0] = $(this).text()
+            $(this).closest('.select').find('b').html(selectTxt[0])
+            return false;
+          })
+          $(".select").on('click', 'ul:eq(1) li', function (e) {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.select ul').fadeOut();
+            selectTxt[1] = $(this).text()
+            $(this).closest('.select').find('b').html(selectTxt[0] + '/' + selectTxt[1])
+            $('.select').removeClass('active');
+            return false;
+          })
+        }
+      });
+
+      $(document).on('click', function (e) {
+        $('.select ul').fadeOut();
+        $('.select').removeClass('active');
+        $('.list.box.ex1').hide()
+      })
+    });
 
   </script>
 </body>

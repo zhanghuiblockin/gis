@@ -106,7 +106,44 @@
               </div>
               <div class="col-md-3  col-sm-3 col-xs-3 col-lg-3">
                 <div class="box b5 tc">
-                  <div class="news"></div>
+                  <div class="news">
+                    <div class="funnyNewsTicker fnt-radius fnt-shadow fnt-easing" id="funnyNewsTicker2">
+                      <ul>
+                        <li>
+                          <img src="assets/img/main/1.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/2.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/3.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/4.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/1.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/2.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/3.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                        <li>
+                          <img src="assets/img/main/4.jpg" />
+                          <span>今日骤降暴雨，给市民出行带来诸多不便</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                   <div class="video">
                     <video controls src="https://image.wanda.cn/uploadfile/2016/0504/20160504044136946.mp4"></video>
                   </div>
@@ -218,9 +255,13 @@
   </div>
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/common.js"></script>
+  <script src="assets/plug/funnyNewsTicker/funnyNewsTicker.js"></script>
   <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+  <script src="assets/js/common.js"></script>
   <script type="text/javascript">
+    $(document).ready(function () {
+      $("#funnyNewsTicker2").funnyNewsTicker({ width: "100%", itemheight: 105, infobarvisible: false, pagenavi: false, timer: 900, itembgcolor: "#252729", bordercolor: "#a0a0a0", titlecolor: "#FFF" });
+    });
     // 路径配置
     require.config({
       paths: {
@@ -249,9 +290,9 @@
             {
               name: '种植面积',
               type: 'pie',
-              radius: [40, 80],
-              x: '60%',
-              width: '35%',
+              radius: [40, 70],
+              x: '10%',
+              width: '30%',
               funnelAlign: 'left',
               max: 1048,
               data: [
@@ -268,7 +309,7 @@
           ]
         };
         var optionB = {
-          grid: { x: 50, y: 20, y2: 55, x2: 10, borderWidth: 0, },
+          grid: { x: 50, y: 20, y2: 55, x2: 0, borderWidth: 0, },
           tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -277,6 +318,7 @@
           },
           legend: {
             y: 'bottom',
+            textStyle:{color:'#fff'},
             data: ['肉类', '水产品', '蛋类', '蜂产品', '奶产品']
           },
           calculable: true,
@@ -316,7 +358,14 @@
                   shadowOffsetY: 0,
                 }
               },
-              splitLine: { show: false },
+              splitLine: { 
+                show: true,
+                lineStyle: {
+                    color: '#436395',
+                    width: 1,
+                    type: 'solid'
+                }
+              },
               splitArea: { show: false },
               axisLabel: { textStyle: { color: '#c7dbff' } },
               type: 'value'
@@ -324,6 +373,8 @@
           ],
           series: [
             {
+              barMaxWidth: 50,
+              barCategoryGap: '40%',
               name: '肉类',
               type: 'bar',
               stack: '总量',
@@ -361,7 +412,7 @@
           ]
         };
         var optionC = {
-          grid: { x: 50, y: 20, y2: 55, x2: 10, borderWidth: 0, },
+          grid: { x: 30, y: 20, y2: 55, x2: 0, borderWidth: 0, },
           tooltip: {
             trigger: 'axis',
             axisPointer: {            // 坐标轴指示器，坐标轴触发有效
@@ -370,6 +421,7 @@
           },
           legend: {
             y: 'bottom',
+            textStyle:{color:'#fff'},
             data: ['一般贫困人数', '低保贫困人数', '无保贫困人数']
           },
           calculable: true,
@@ -409,7 +461,14 @@
                   shadowOffsetY: 0,
                 }
               },
-              splitLine: { show: false },
+              splitLine: { 
+                show: true,
+                lineStyle: {
+                    color: '#436395',
+                    width: 1,
+                    type: 'solid'
+                }
+              },
               splitArea: { show: false },
               axisLabel: { textStyle: { color: '#c7dbff' } },
               type: 'value'

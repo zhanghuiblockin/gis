@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <title>自定义样式信息窗体</title>
+  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=您申请的key值"></script>
+  <link rel="stylesheet/less" type="text/css" href="../assets/css/style.less" />
+  <script src="../assets/js/less.min.js"></script>
+</head>
+
+<body>
+  <!-- <div class="amap-info-content">
+    <div class="box ex1">
+        <div class="info-content cl">
+            <img class="img" src="https://placem.at/people?w=400&h=400&random=1" alt="">
+            <div class="txt">
+              <h4>兴农养殖场
+                <span>【禽类】</span>
+              </h4>
+              <p>负责人：赵国秋
+                <br>地址：阜平县平阳镇平阳村
+                <br>联系方式：13582267277</p>
+            </div>
+          </div>
+    </div>
+</div> -->
+  <div id="container"></div>
+  <script type="text/javascript">
+    $.ajax({
+      type: "get",
+      url: "../assets/mock/info.json",
+      dataType: "json",
+      success: function (res) {
+
+        // 地图初始化
+        var map = new AMap.Map("container", {
+          resizeEnable: true,
+          center: [114.195083, 38.849236],
+          zoom: 10
+        });
+
+        // 获取大类、小类企业信息
+        // id:大类ID(必填),subId:子类id(选填)
+        // 具体请看info.json相关模拟字段
+        // 调用方法 getCompany(1,101)/getCompany(1);
+        function getCompany(id, subId) {
+          // 详情列表
+          if (id && subId) {
+            for (var i = 0; i < res.length; i++) {
+              if (res[i].id == id && res[i].subId == subId) {
+                return res[i].child
+              }
+            }
+          }
+          // 大类列表
+          if (id && !subId) {
+            var arr = [];
+            for (var i = 0; i < res.length; i++) {
+              if (res[i].id == id && res[i].child.length > 0) {
+                for (var j = 0; j < res[i].child.length; j++) {
+                  arr.push(res[i].child[j])
+                }
+              }
+            }
+            return arr;
+          }
+        }
+        var companys = getCompany(1);
+        // var companys = getCompany(1,101);
+
+        var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+        for (var i = 0, marker; i < companys.length; i++) {
+          var marker = new AMap.Marker({
+            position: companys[i].lnglats,
+            map: map
+          });
+          var infoStr = '<div class="box ex1"><div class="info-content cl"><img class="img" src="'+companys[i].img+'" alt=""><div class="txt"><h4>'+companys[i].name+'<span>【XXX】</span></h4><p>联系人：'+companys[i].contact+'<br>地址：'+companys[i].add+'<br>联系方式：'+companys[i].tel+'</p></div></div></div>'
+          marker.content = infoStr;
+          marker.on('click', markerClick);
+          // marker.emit('click', { target: marker });
+        }
+        function markerClick(e) {
+          infoWindow.setContent(e.target.content);
+          infoWindow.open(map, e.target.getPosition());
+        }
+        map.setFitView();
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>

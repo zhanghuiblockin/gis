@@ -86,7 +86,7 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
     &:after {.wh(0)}
   }
   &.b1 { padding: 15px; height: 196px;
-    h3 {margin:0; padding:0; font-size: 15px;}
+    h3 {margin:0; padding:0; font-size: 15px; margin-bottom: 5px;}
     ul {margin:0; padding:0;}
     li {.bbline; list-style: none; font-size: 13px;.vm; transition: 0.3s;
       &:hover {border-bottom-color: #fff;}
@@ -114,7 +114,7 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
     }
   }
   &.b5 {height: 447px; padding:15px;
-    .news {background: #f00; height: 188px;}
+    .news {height: 188px;}
     .video { height: 200px; background: #000;
       video { width: 100%; height:100%}
     }
@@ -131,7 +131,24 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
       span{.dib;.vm;}
     }
   }
-  &.map {height: 692px;}
+  &.map {height: 692px;
+    .bar {.pa; left:50px; top:20px; right:50px; background: #223e71; z-index: 999; padding:15px 15px;
+      h3 {.fl;font-size: 15px; .lh(32px); margin:0;}
+      .select { margin-left: 15px;}
+    }
+    .list {.pa; left:50px; top:100px; z-index: 998; width: 366px; padding:15px 15px 0 15px;
+      .list-content {margin:0; padding:0; height:450px; overflow: auto;
+        li {list-style: none; .bbline; padding:15px 0;
+          h4 {
+            span {color:#48d9b2;}
+          }
+          .img {.wh(115px); border: 1px solid #5373a5; .fl;}
+          .txt {.fl; margin-left: 15px; width: 185px; text-align: justify;}
+        }
+      }
+    }
+    
+  }
   &.b7 {.tc; padding-bottom: 30px; min-height: 200px; margin-top: 25px;
     p {.lh(50px); margin-top: 30px;}
     h4 {font-size: 18px; line-height: 1.8}
@@ -181,7 +198,7 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
     }
     .hr {border-top-color: #436395}
     .history{.pr;
-      i {.pa; left:0; right:0; top:50%; border-top: 2px solid #6780ad;}
+      i {.pa; left:0; right:0; top:50%; height:2px; margin-top: -5px; background:#6780ad;}
       ul { padding: 0;
         li {list-style: none; .fl;.pr; width: 25%; padding:0 4%; 
           b {.pa; left: 50%; top:50%; .wh(18px); background: #4c6396; border-radius: 50%; margin-left: -9px;margin-top: -9px; transition: 0.3s all;
@@ -209,9 +226,85 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
           }
         }
       }
+      .prev,.next{.pa; left:-10px; top:50%;font-weight: bold; margin-top: -20px;font-family: simsun; font-size: 36px; color:#6780ad;.tc; width: 30px; height:30px; .db; line-height: 30px;
+        &:hover {text-decoration: none; color: #fff;}
+      }
+      .next{left:auto; right:-10px;}
     }
   }
-
+  &.jkyj {padding:0 20px 20px 20px;
+    ul{ margin:0; padding:0;
+      li {.bbline; list-style: none;.vm; 
+        b {.dib; .tc; width: 25px;.lh(30px);
+          img {.dib;.vm;}
+        }
+        span {.di; .vm;color: #c72680;}
+        a {color: #3058b6;
+          &:hover {.txt-color;}
+        }
+      }
+    }
+  }
+  &.jkfw{.box.jkyj;
+    ul{
+      li{
+        span {.txt-color;}
+      }
+    }
+  }
+  @jkHeight1:386px;
+  @jkHeight2:250px;
+  &.jk-1 { padding:15px 15px; height:@jkHeight1;
+    .tab-tit {.tc;
+      ul {margin:0; padding:0;.dib;
+        li {list-style: none;.fl; margin-left: -1px;border: 1px solid #5373a5; transition: 0.3s;
+          &.active {background: #19315e;}
+          a {.txt-color;text-decoration: none;padding:5px 15px;.db;
+            &:hover{text-decoration: none;}
+          }
+        }
+      }
+    }
+    .tab-content{ margin-top: 10px;
+      &>div {overflow: auto; height:307px;
+        p {text-align: justify;line-height: 1.8;}
+      }
+    }
+  }
+  &.jk-2 { padding: 20px 15px; height:@jkHeight2;
+    ul{margin:0; padding:0;
+      li{list-style: none; width: 30%;.fl; margin:0 1.5%;
+        h4 {font-size: 14px;}
+        p {.count;font-size: 20px; padding:10px 0; margin-top: 10px;
+          i {font-size: 12px;}
+        }
+      }
+    }
+  }
+  &.jk-3 {height:@jkHeight1;.pr;
+    .form-control {border-radius: 0; background:#3b598f; border-color: #5373a5; .txt-color;}
+    .bar {.pa; left:30%; top:25px; right:20px; z-index: 999;}
+    #chart-d {height:@jkHeight1;}
+  }
+  &.jk-4 {height:@jkHeight2; padding:0 25px; overflow-x: hidden; overflow-y: auto;
+    ul { padding:0; margin:0;
+      li {.bbline; list-style: none;.fl; width: 33.3%; padding:15px 1.5%;
+        span {margin-left: 10px;}
+        a {.dib; border:1px solid #075aa8; .txt-color; padding:3px 10px; margin-left: 10px;text-decoration: none; background: #1c447e;
+          s {background: url('../img/monitor/icon07.png') no-repeat right center; padding-right: 22px; text-decoration: none;}
+          &:hover{text-decoration: none;border-color:#fff;}
+        }
+      }
+    }
+  }
+  &.ex1 {
+    &:before {left:5px; top:5px;}
+    &:after {right:5px; bottom:5px;}
+    &:hover{ 
+      &:before {.wh(14px)}
+      &:after {.wh(14px)}
+    }
+  }
 }
 .pages {.tc;
   span {.dib;.fl;}
@@ -227,18 +320,6 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
 .title{
   &.ex1 {font-size: 15px; .txt-color;}
 }
-// 农技推广v1
-// .box-mean {margin:-10px;
-//   &>div {margin:15px 10px}
-//   .col-md-2 {
-//     .count {border: 1px solid #5373a5; margin-top: 15px; padding-bottom: 20px; padding-top: 15px; box-shadow: 0 0 50px 20px rgba(41,75,137,1) inset;.tc; transition: 0.3s;
-//       &:hover {box-shadow: none;}
-//       h4 {.txt-success;font-size: 32px;
-//         b{font-weight: normal; font-size: 16px; .txt-color;}
-//       }
-//     }
-//   }
-// }
 // 农技推广v2
 .count {border: 1px solid #5373a5; margin-top: 15px; padding-bottom: 20px; padding-top: 15px; box-shadow: 0 0 50px 20px rgba(41,75,137,1) inset;.tc; transition: 0.3s;
   &:hover {box-shadow: none;}
@@ -251,4 +332,60 @@ html,body { min-height: 100%; height: 100%; min-width: 1280px !important; }
   .modal-body {font-size: 24px; .txt-color; padding-top: 30px;}
   .modal-footer {border: none;.tc;}
   .btn-primary {border-radius: 0; background: #68b8e7;}
+}
+
+// 产业地图
+.select{ border:1px solid #5373a5; background: #3b598f; padding:0px 10px; .dib; .pr; cursor: pointer; width: 180px; 
+  b {background: url(../img/map/arrb.png) no-repeat right center; padding-right: 20px; .lh(32px); .db; overflow: hidden;}
+  ul{ margin:0; padding:0;.pa; left:-1px; top:34px; right:-1px;border:1px solid #5373a5; background: #3b598f;width:180px; max-height:240px; overflow-y: auto;.dn;
+    li {list-style: none; padding:0 10px; .lh(30px);.pr; border-bottom:1px solid #5373a5;
+      &.active,&:hover {background: #16274f; .txt-color;}
+    }
+  }
+  ul:nth-of-type(1) {.pa; left:-1px;}
+  ul:nth-of-type(2) {.pa; left:118px;}
+  &.active {
+    b {background: url(../img/map/arrt.png) no-repeat right center;}
+    ul:nth-of-type(1) {.pa; left:-1px;.db;}
+  }
+}
+.search { width: 350px; .dib;.fr;
+  input {border:1px solid #5373a5; background: #3b598f; border-radius: 0;.txt-color;}
+  button {border:1px solid #0090e3; background: #0090e3; .txt-color;}
+}
+
+// 首页新闻滚动
+.funnyNewsTicker{width:100%; overflow:hidden; position:relative; height:50px; box-sizing:border-box; margin:0 auto;}
+.funnyNewsTicker>ul{padding:0; margin:0; list-style-type:none; position:relative;}
+.funnyNewsTicker>ul>li{display:none; width:100%; height:50px; background:#FFF; position:absolute; overflow:hidden; text-align:center;}
+.funnyNewsTicker>ul>li img{width:100%; height:auto;}
+.funnyNewsTicker>ul>li>.fnt-content{position:absolute; top:0;left:0; right:0; box-sizing:border-box;overflow:hidden;}
+.funnyNewsTicker>ul>li>.fnt-content a{text-decoration:none;}
+.funnyNewsTicker>ul>li>.fnt-content a:hover{text-decoration:underline;}
+.funnyNewsTicker>ul>li>.fnt-info{position:absolute; bottom:0; left:0; right:0; height:20px; padding:5px; border-top:solid 1px #DDD;}
+.funnyNewsTicker>ul>li>.fnt-info a{display:inline-block; width:20px; background:#0F0; opacity:0.2; cursor:pointer;}
+.funnyNewsTicker>ul>li>.fnt-info a:hover{opacity:1;}
+.funnyNewsTicker>ul>li>span {.pa; left:0; right:0; bottom:0; padding:10px; background: rgba(0,0,0,0.5); color:#fff; font-size: 12px;}
+.funnyNewsTicker .fnt-top0{-ms-transform: scale(0.80); -webkit-transform: scale(0.85); transform: scale(0.85); opacity:0.85; top:0; z-index:1; display:block;}
+.funnyNewsTicker .fnt-top1{-ms-transform: scale(0.87); -webkit-transform: scale(0.9); transform: scale(0.9); opacity:0.9; top:12px; z-index:2; display:block;}
+.funnyNewsTicker .fnt-top2{-ms-transform: scale(0.95); -webkit-transform: scale(0.95); transform: scale(0.95); opacity:0.95; top:24px; z-index:3; display:block;}
+.funnyNewsTicker .fnt-active{-ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); opacity:1; top:36px; z-index:10; display:block;}
+.funnyNewsTicker .fnt-bottom2{-ms-transform: scale(0.95); -webkit-transform: scale(0.95); transform: scale(0.95); opacity:0.95; top:48px; z-index:6; display:block;}
+.funnyNewsTicker .fnt-bottom1{-ms-transform: scale(0.87); -webkit-transform: scale(0.90); transform: scale(0.90); opacity:0.9; top:60px; z-index:5; display:block;}
+.funnyNewsTicker .fnt-bottom0{-ms-transform: scale(0.80); -webkit-transform: scale(0.85); transform: scale(0.85); opacity:0.85; top:72px; z-index:4; display:block;}
+.fnt-easing2{transition:.45s linear; -moz-transition:.45s linear; -webkit-transition:.45s linear;}
+.fnt-easing li{transition:.5s ease-out; -moz-transition:.5s ease-out; -webkit-transition:.5s ease-out;}
+.fnt-radius li{-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.fnt-radius2 li{-webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.fnt-shadow li{-webkit-box-shadow: 0px 0px 10px 0px rgba(100,100,100,0.3); -moz-box-shadow: 0px 0px 10px 0px rgba(100,100,100,0.3); box-shadow: 0px 0px 10px 0px rgba(100,100,100,0.3);}
+.fnt-shadow-big{-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) !important; -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) !important; box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5) !important;}
+
+.amap-info-sharp {margin:0 auto; overflow: hidden;.pr;top:-1px;width:30px; background-image: url(../img/map/sharp.png)}
+.amap-info-content {background:transparent; border: none;.txt-color;padding:0;
+  .info-content { padding:10px;
+    .img {.wh(100px); border: 1px solid #5373a5; .fl;}
+    .txt {.fl; margin-left: 15px; width: 150px; text-align: justify; line-height: 1.5;
+      h4 {margin:0;font-size:14px; margin-bottom:5px;}
+    }
+  }
 }

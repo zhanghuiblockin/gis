@@ -1,4 +1,6 @@
-$(function() {});
+$(function() {
+
+});
 
 window.onload = function() {
   setContentHeight();
