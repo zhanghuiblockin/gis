@@ -225,6 +225,25 @@
                       </ul>
                     </div>
                   </div>
+                  <div class="box ex1 detail">
+                    <span class="close">&times;</span>
+                    <div class="l">
+                      <div>
+                        <img src="https://placem.at/people?w=300&h=200&random=1" alt="">
+                      </div>
+                      <video controls src="https://image.wanda.cn/uploadfile/2016/0504/20160504044136946.mp4"></video>
+                    </div>
+                    <div class="r">
+                      <h3>名称：兴农养殖场 【禽类】 面积：25亩</h3>
+                      <p class="info">地址：阜平县平阳镇平阳村
+                        <br> 负责人：赵国秋
+                        <br> 联系方式：13582267277
+                        <br> 主要作物：小麦、大枣、黄岑
+                      </p>
+                      <p class="des">简介：营业范围：组织采购、供应成员所须的饲料；组织收购、销售成员饲养的元鱼；开展与元鱼养殖、经营有关的技术培训、技术 信息服务。（依法须经批准的项目，经相关部门批准后方可开展经营活动）
+                      </p>
+                    </div>
+                  </div>
                   <div id="container"></div>
                 </div>
               </div>
@@ -239,68 +258,82 @@
   <script src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js"></script>
   <script src="assets/js/common.js"></script>
   <script type="text/javascript">
-    $.ajax({
-      type: "get",
-      url: "../assets/mock/info.json",
-      dataType: "json",
-      success: function (res) {
+    function getMap() {
+      var $argumentsLen = arguments.length;
+      var $arguments = arguments;
+      $.ajax({
+        type: "get",
+        url: "../assets/mock/info.json",
+        dataType: "json",
+        success: function (res) {
 
-        // 地图初始化
-        var map = new AMap.Map('container', {
-          resizeEnable: true,
-          viewMode: '3D',
-          pitch: 50,
-          zoom: 10,
-          center: [114.195083, 38.849236]
-        });
+          // 地图初始化
+          var map = new AMap.Map('container', {
+            resizeEnable: true,
+            viewMode: '3D',
+            pitch: 50,
+            zoom: 10,
+            center: [114.195083, 38.849236]
+          });
 
-        // 获取大类、小类企业信息
-        // id:大类ID(必填),subId:子类id(选填)
-        // 具体请看info.json相关模拟字段
-        // 调用方法 getCompany(1,101)/getCompany(1);
-        function getCompany(id, subId) {
-          // 详情列表
-          if (id && subId) {
-            for (var i = 0; i < res.length; i++) {
-              if (res[i].id == id && res[i].subId == subId) {
-                return res[i].child
-              }
-            }
-          }
-          // 大类列表
-          if (id && !subId) {
-            var arr = [];
-            for (var i = 0; i < res.length; i++) {
-              if (res[i].id == id && res[i].child.length > 0) {
-                for (var j = 0; j < res[i].child.length; j++) {
-                  arr.push(res[i].child[j])
+          // 获取大类、小类企业信息
+          // id:大类ID(必填),subId:子类id(选填)
+          // 具体请看info.json相关模拟字段
+          // 调用方法 getCompany(1,101)/getCompany(1);
+          function getCompany(id, subId) {
+            // 详情列表
+            if (id && subId) {
+              for (var i = 0; i < res.length; i++) {
+                if (res[i].id == id && res[i].subId == subId) {
+                  return res[i].child
                 }
               }
             }
-            return arr;
+            // 大类列表
+            if (id && !subId) {
+              var arr = [];
+              for (var i = 0; i < res.length; i++) {
+                if (res[i].id == id && res[i].child.length > 0) {
+                  for (var j = 0; j < res[i].child.length; j++) {
+                    arr.push(res[i].child[j])
+                  }
+                }
+              }
+              return arr;
+            }
           }
-        }
-        var companys = getCompany(1);
-        // var companys = getCompany(1,101);
 
-        var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
-        for (var i = 0, marker; i < companys.length; i++) {
-          var marker = new AMap.Marker({
-            position: companys[i].lnglats,
-            map: map
-          });
-          var infoStr = '<div class="box ex1"><div class="info-content cl"><img class="img" src="' + companys[i].img + '" alt=""><div class="txt"><h4>' + companys[i].name + '<span>【XXX】</span></h4><p>联系人：' + companys[i].contact + '<br>地址：' + companys[i].add + '<br>联系方式：' + companys[i].tel + '</p></div></div></div>'
-          marker.content = infoStr;
-          marker.on('click', markerClick);
-          // marker.emit('click', { target: marker });
+          function markerClick(e) {
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+          }
+          var company = []
+          if ($argumentsLen == 0) {
+            companys = getCompany(1);
+          }
+          if ($argumentsLen == 1) {
+            companys = getCompany($arguments[0]);
+          }
+          if ($argumentsLen == 2) {
+            companys = getCompany($arguments[0], $arguments[1]);
+          }
+          console.log($argumentsLen);
+
+          var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+          for (var i = 0, marker; i < companys.length; i++) {
+            var marker = new AMap.Marker({
+              position: companys[i].lnglats,
+              map: map
+            });
+            var infoStr = '<div class="box ex1"><div class="info-content cl"><img class="img" src="' + companys[i].img + '" alt=""><div class="txt"><h4>' + companys[i].name + '<span>【XXX】</span></h4><p>联系人：' + companys[i].contact + '<br>地址：' + companys[i].add + '<br>联系方式：' + companys[i].tel + '</p><a onclick="openDetail('+ companys.idx +')">查看详情</a></div></div></div>'
+            marker.content = infoStr;
+            marker.on('click', markerClick);
+          }
+          map.setFitView();
         }
-        function markerClick(e) {
-          infoWindow.setContent(e.target.content);
-          infoWindow.open(map, e.target.getPosition());
-        }
-        map.setFitView();
-      }
-    });
+      });
+    }
+    getMap()
   </script>
   <script>
     $(function () {
@@ -309,6 +342,7 @@
         url: "../assets/mock/select.json",
         dataType: "json",
         success: function (res) {
+          var catId, subId;
           var area = res.area;
           var areaLen = res.area.length;
           var product = res.product;
@@ -317,10 +351,10 @@
           var organizationLen = res.organization.length;
 
           $('#inputSearch').click(function (e) {
+            e.stopPropagation();
             $('.list.box.ex1').show();
             return false;
           });
-          
 
           var selectTxt = [];
           $(".select").click(function (e) {
@@ -350,13 +384,13 @@
 
           // 一级点击
           $(".select").on('click', 'ul:eq(0) li', function (e) {
-            var id = $(this).data('id');
+            catId = $(this).data('id');
             var tar = $(this).closest('.select').attr('id'); //String:area,product,organization
             $(this).addClass('active').siblings().removeClass('active')
 
             switch (tar) {
               case 'area':
-                var objSelect = _.find(area, function (o) { return o.id == id })
+                var objSelect = _.find(area, function (o) { return o.id == catId })
                 var arrChild = objSelect.child.length;
                 if (arrChild > 0) {
                   var areaUl2Str = ''
@@ -368,12 +402,12 @@
                 } else {
                   $('.select ul').fadeOut();
                 }
-                console.log('area', id, );
+                console.log('area-catId', catId, );
 
                 break;
 
               case 'product':
-                var objSelect = _.find(product, function (o) { return o.id == id })
+                var objSelect = _.find(product, function (o) { return o.id == catId })
                 var arrChild = objSelect.child.length;
                 // console.log(objSelect);
                 if (arrChild > 0) {
@@ -387,10 +421,13 @@
                 } else {
                   $('.select ul').fadeOut();
                 }
+                console.log('product-catId', catId, );  // ??????????????????
+                getMap(catId)
                 break;
 
               case 'organization':
                 $('.select ul').fadeOut();
+                console.log('organization-catId', catId, );
                 break;
             }
             selectTxt[0] = $(this).text()
@@ -398,23 +435,36 @@
             return false;
           })
           $(".select").on('click', 'ul:eq(1) li', function (e) {
+            var subId = $(this).data('id');
             $(this).addClass('active').siblings().removeClass('active')
             $('.select ul').fadeOut();
             selectTxt[1] = $(this).text()
             $(this).closest('.select').find('b').html(selectTxt[0] + '/' + selectTxt[1])
             $('.select').removeClass('active');
+            console.log(subId);
+            getMap(catId, subId)
             return false;
           })
         }
       });
 
       $(document).on('click', function (e) {
-        $('.select ul').fadeOut();
         $('.select').removeClass('active');
-        $('.list.box.ex1').hide()
+        $('.select ul').fadeOut();
+        var contentEle = $('.list.box.ex1');
+        if (contentEle !== e.target && contentEle.has(e.target).length === 0) {
+          $('.list.box.ex1').hide()
+        }
       })
-    });
+      $(".box.ex1.detail .close").click(function (e) {
+        e.preventDefault();
+        $(this).parent().fadeOut();
+      });
 
+    });
+    function openDetail(info) {
+      console.log(info);
+    }
   </script>
 </body>
 
