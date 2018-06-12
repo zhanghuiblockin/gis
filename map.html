@@ -14,9 +14,7 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <!-- 高德地图 -->
-  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
   <script src="http://webapi.amap.com/maps?v=1.4.6&key=6f6c7b36575ec0255247ca607f8bf797&plugin=Map3D,AMap.DistrictSearch"></script>
-  <!-- <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=6f6c7b36575ec0255247ca607f8bf797&plugin=Map3D,AMap.DistrictSearch"></script> -->
   <style>
     #container {
       width: 100%;
@@ -317,7 +315,6 @@
           if ($argumentsLen == 2) {
             companys = getCompany($arguments[0], $arguments[1]);
           }
-          console.log($argumentsLen);
 
           var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
           for (var i = 0, marker; i < companys.length; i++) {
@@ -325,6 +322,7 @@
               position: companys[i].lnglats,
               map: map
             });
+            
             var infoStr = '<div class="box ex1"><div class="info-content cl"><img class="img" src="' + companys[i].img + '" alt=""><div class="txt"><h4>' + companys[i].name + '<span>【XXX】</span></h4><p>联系人：' + companys[i].contact + '<br>地址：' + companys[i].add + '<br>联系方式：' + companys[i].tel + '</p><a onclick="openDetail('+ companys.idx +')">查看详情</a></div></div></div>'
             marker.content = infoStr;
             marker.on('click', markerClick);

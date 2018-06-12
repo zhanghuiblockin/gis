@@ -45,26 +45,68 @@
           <div class="container-fluid" style="padding-top:15px; padding-bottom: 15px;">
             <div class="row">
               <div class="col-md-9 col-lg-9 col-sm-9 col-xm-9">
-                <div class="box map">123</div>
+                <div class="box map" id="container"></div>
               </div>
               <div class="col-md-3 col-lg-3 col-sm-3 col-xm-3">
-                  <div class="box jkyj">
-                    <h3 class="title ex1">监控预警</h3>
-                    <ul>
-                      <li><b><img src="assets/img/monitor/icon01.png" alt=""></b><span>龙泉镇黑岭沟一号大鹏温度超值</span><a href="monitor-detail.html">【查看】</a></li>
-                      <li><b><img src="assets/img/monitor/icon02.png" alt=""></b><span>龙泉镇黑岭沟三号大鹏监控故障</span><a href="monitor-detail.html">【查看】</a></li>
-                      <li><b><img src="assets/img/monitor/icon03.png" alt=""></b><span>龙泉镇黑岭沟一号大鹏温度超值</span><a href="monitor-detail.html">【查看】</a></li>
-                      <li><b><img src="assets/img/monitor/icon04.png" alt=""></b><span>王林口乡传感数据未能及时上报</span><a href="monitor-detail.html">【查看】</a></li>
-                    </ul>
-                  </div>
-                  <div class="box jkfw" style="margin-top: 20px;">
-                    <h3 class="title ex1">监控范围</h3>
-                    <ul>
-                      <li><b><img src="assets/img/monitor/icon01.png" alt=""></b><span>摄像头接入 462 个</span><a href="monitor-detail.html">【查看】</a></li>
-                      <li><b><img src="assets/img/monitor/icon02.png" alt=""></b><span>温度传感器 786 个</span><a href="monitor-detail.html">【查看】</a></li>
-                      <li><b><img src="assets/img/monitor/icon03.png" alt=""></b><span>监控覆盖面积 5640 亩</span><a href="monitor-detail.html">【查看】</a></li>
-                    </ul>
-                  </div>
+                <div class="box jkyj">
+                  <h3 class="title ex1">监控预警</h3>
+                  <ul>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon01.png" alt="">
+                      </b>
+                      <span>龙泉镇黑岭沟一号大鹏温度超值</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon02.png" alt="">
+                      </b>
+                      <span>龙泉镇黑岭沟三号大鹏监控故障</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon03.png" alt="">
+                      </b>
+                      <span>龙泉镇黑岭沟一号大鹏温度超值</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon04.png" alt="">
+                      </b>
+                      <span>王林口乡传感数据未能及时上报</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="box jkfw" style="margin-top: 20px;">
+                  <h3 class="title ex1">监控范围</h3>
+                  <ul>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon01.png" alt="">
+                      </b>
+                      <span>摄像头接入 462 个</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon02.png" alt="">
+                      </b>
+                      <span>温度传感器 786 个</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                    <li>
+                      <b>
+                        <img src="assets/img/monitor/icon03.png" alt="">
+                      </b>
+                      <span>监控覆盖面积 5640 亩</span>
+                      <a href="monitor-detail.html">【查看】</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -75,6 +117,86 @@
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/common.js"></script>
+  <!-- 高德地图 -->
+  <script src="http://webapi.amap.com/maps?v=1.4.6&key=6f6c7b36575ec0255247ca607f8bf797&plugin=Map3D,AMap.DistrictSearch"></script>
+  <script type="text/javascript">
+    function getMap() {
+      var $argumentsLen = arguments.length;
+      var $arguments = arguments;
+      $.ajax({
+        type: "get",
+        url: "../assets/mock/info.json",
+        dataType: "json",
+        success: function (res) {
+
+          // 地图初始化
+          var map = new AMap.Map('container', {
+            resizeEnable: true,
+            viewMode: '3D',
+            pitch: 50,
+            zoom: 10,
+            center: [114.195083, 38.849236]
+          });
+
+          // 获取大类、小类企业信息
+          // id:大类ID(必填),subId:子类id(选填)
+          // 具体请看info.json相关模拟字段
+          // 调用方法 getCompany(1,101)/getCompany(1);
+          function getCompany(id, subId) {
+            // 详情列表
+            if (id && subId) {
+              for (var i = 0; i < res.length; i++) {
+                if (res[i].id == id && res[i].subId == subId) {
+                  return res[i].child
+                }
+              }
+            }
+            // 大类列表
+            if (id && !subId) {
+              var arr = [];
+              for (var i = 0; i < res.length; i++) {
+                if (res[i].id == id && res[i].child.length > 0) {
+                  for (var j = 0; j < res[i].child.length; j++) {
+                    arr.push(res[i].child[j])
+                  }
+                }
+              }
+              return arr;
+            }
+          }
+
+          function markerClick(e) {
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+          }
+          var company = []
+          if ($argumentsLen == 0) {
+            companys = getCompany(1);
+          }
+          if ($argumentsLen == 1) {
+            companys = getCompany($arguments[0]);
+          }
+          if ($argumentsLen == 2) {
+            companys = getCompany($arguments[0], $arguments[1]);
+          }
+
+          var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+          for (var i = 0, marker; i < companys.length; i++) {
+            var marker = new AMap.Marker({
+              position: companys[i].lnglats,
+              map: map
+            });
+            
+            var infoStr = '<div class="box ex1"><div class="info-content cl"><img class="img" src="' + companys[i].img + '" alt=""><div class="txt"><h4>' + companys[i].name + '<span>【XXX】</span></h4><p>联系人：' + companys[i].contact + '<br>地址：' + companys[i].add + '<br>联系方式：' + companys[i].tel + '</p><a onclick="openDetail('+ companys.idx +')">查看详情</a></div></div></div>'
+            marker.content = infoStr;
+            marker.on('click', markerClick);
+          }
+          map.setFitView();
+        }
+      });
+    }
+    getMap()
+  </script>
 </body>
 
 </html>
